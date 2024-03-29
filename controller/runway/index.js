@@ -44,7 +44,7 @@ class Runway {
             } else {
                 return res.send({
                     status: 200,
-                    url: '/upload/image/' + req.file.filename,
+                    url: '/image/' + req.file.filename,
                     name: req.file.filename,
                 })
             }

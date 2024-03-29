@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/view', express.static('public/view'));
-app.use('/upload', express.static('upload'));
+app.use('/image', express.static('upload/image'));
 router(app);
 app.listen(config.port, () => {
     console.log(`成功监听端口:http://localhost:${config.port}`);
