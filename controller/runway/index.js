@@ -1,4 +1,5 @@
 const BaseModel = require('../../base_module/index');
+const VideoModel = require('../video/index');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
@@ -22,9 +23,13 @@ class Runway {
     }
 
     async runWayText(req, res) {
-        const text = req.query.text;
-
-        res.send(text);
+        const { text, image_name } = req.query;
+        console.log(text, image_name);
+        res.send({
+            status: 200,
+            url: '/video/send/stream',
+            message: '获取视频成功',
+        })
     }
 
     // 获取前端的文件
